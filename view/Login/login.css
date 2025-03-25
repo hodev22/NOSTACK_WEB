@@ -1,0 +1,253 @@
+body, html {
+    margin: 0;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background-color: #fff;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+.logo {
+   font-size: 1.3rem;
+   font-weight: 550;
+   color: #0d2d57;
+   margin-left: 6%;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+    text-align: center;
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: white;
+  border-bottom: 1px solid #486284;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-left: 5%;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+  }
+  
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+  
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    text-align: center;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.login-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.signup {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    opacity: 0.9;
+    text-decoration: underline;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+h1 {
+    margin: 5px;
+    padding: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2.3rem;
+    font-weight: bold;
+    color: #486284;
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: #486284;
+    opacity: 1;
+    margin: 0 1rem;
+}
+
+.login-form {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.login-form input[type="email"], input[type="password"] {
+    width: 365px;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-form input[type="submit"]:hover {
+    background-color: #333;
+}
+
+.login-form .login-btn {
+    display:inline-flexbox;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.login-form .forgot-password {
+    margin-top: 10px;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+.not-yet {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    color: #313131;
+    opacity: 1;
+    text-align: center;
+    margin: 1rem;
+    text-decoration: none;
+}
+
+.not-yet::before, .not-yet::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background: #313131;
+    margin: 0 1rem;
+}
+
+.login-btn a {
+    position: relative;
+    justify-content: space-between;
+    display: inline;
+    gap: 3rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    text-decoration: none;
+  }
+
+.sign-up button {
+    font-family: 'Pretendard';
+    font-size: 0.875rem;
+    padding: 2px 30px;
+    text-align: center;
+    color: black;
+    cursor: pointer;
+}
+
+#naverId_Login img {
+    display: inline-block;
+    justify-content: space-between;
+    position: relative;
+    width: 180px;
+    height: 44.26px;
+  }
+
+@media (max-width: 2080px) {
+  
+    .container {
+        margin-top: 80px;
+        max-height: 180%;
+    }
+}
+
+@media (max-width: 1440px) {
+  
+    .container {
+        margin-top: 80px;
+        max-height: 180%;
+    }
+}
+  
+  @media (max-width: 1280px) {
+
+    .container {
+        margin-top: 80px;
+        max-height: 180%;
+    }
+}
+
+  
+  @media (max-width: 1080px) {
+  
+    .container {
+        margin-top: 100px;
+        max-height: 180%;
+    }
+  }
+  
+  @media (max-width: 960px) {
+  
+    .container {
+        margin-top: 80px;
+        max-height: 180%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+  
+    .container {
+        margin-top: 80px;
+        max-height: 180%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+  
+    .container {
+        margin-top: 80px;
+        max-height: 180%;
+    }
+  }

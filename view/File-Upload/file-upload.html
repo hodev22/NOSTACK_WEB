@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>파일 업로드 및 OCR</title>
+    <link rel="stylesheet" href="/view/File-Upload/file-upload.css">
+    <link rel="icon" href="/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">NOSTACK</div>
+        <nav class="navigation">
+            <div class="nav-links">
+                <div class="nav-link" onclick="location.href='../Main/main.html'">Home</div>
+                <div class="nav-link" onclick="location.href='#'">서비스 소개</div>
+                <div class="nav-link" onclick="location.href='#'">문제집 생성</div>
+            </div>
+            <div class="divider"></div>
+            <div class="login-button" onclick="location.href='../Login/login.html'">
+                <div class="login-text">로그인</div>
+            </div>
+            <div class="signup" onclick="location.href='../Sign/signup.html'">회원가입</div>
+        </nav>
+    </div>
+
+    <main>
+        <div class="tab-menu">
+            <button class="tab active" onclick="activateTab(this, 'upload')">파일 업로드</button>
+            <button class="tab" onclick="activateTab(this, 'convert')">파일 변환</button>
+            <button class="tab" onclick="activateTab(this, 'generate')">문제 생성</button>
+            <button class="tab" onclick="activateTab(this, 'history')">보관함</button>
+        </div>
+
+        <div id="upload-section" class="tab-content" style="display: block;">
+            <div class="upload-section">
+                <div class="upload-box" id="upload-box">
+                    <label for="file-upload" class="file-label">
+                        <span class="icon">📁</span>
+                        <span>파일 업로드</span>
+                    </label>
+                    <!-- 파일 형식 제한 적용 -->
+                    <input type="file" id="file-upload" class="file-input" accept=".pdf, .png" multiple>
+                </div>
+                <div class="upload-info">
+                    <p class="upload-title">파일 업로드</p>
+                    <p class="click-here">폴더 아이콘을 클릭해 파일을 업로드 해 주세요.</p>
+                    <p class="upload-description">PDF, 이미지 파일 업로드 가능합니다.</p>
+                </div>
+            </div>
+            <div id="uploaded-files" class="uploaded-files"></div>
+            <div class="complete-btn">
+                <button id="upload-complete-btn">업로드 완료</button>
+            </div>
+        </div>
+
+        <div id="convert-section" class="tab-content" style="display: none;">
+            <div id="ocr-result-box" class="ocr-result-box">
+                <div id="ocr-result" class="ocr-result">
+                    <div id="generate-button" class="generate-btn"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="generate-section" class="tab-content" style="display: none;">
+            <div id="question-generation"></div>
+        </div>
+
+        <div id="history-section" class="tab-content" style="display: none;">
+            <div id="problem-list" class="problem-list"></div>
+        </div>
+    </main>
+    <!-- <div id="problem-display"></div> -->
+<script src="/config/apikey.js"></script>
+</body>
+
+<!-- PDF.js 라이브러리 추가 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<!-- <script src="/controller/file-upload.js"></script> -->
+<script type="module" src="/index.js"></script> <!-- index.js를 모듈로 로드 -->
+<script type="module" src="/controller/tabController.js"></script>
+<script type="module" src="/controller/fileUploadController.js"></script>
+<script type="module" src="/controller/ocrController.js"></script>
+<script type="module" src="/controller/questionController.js"></script>
+<script type="module" src="/controller/sessionManager.js"></script>
+<script type="module" src="/controller/workbookController.js"></script>
+<script type="module" src="/controller/favoriteController.js"></script>
+<script type="module" src="/view/Ocr/ocrView.js"></script>
+
+</html>

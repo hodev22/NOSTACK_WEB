@@ -1,0 +1,163 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  width: 1440px;
+  height: 980px;
+  position: relative;
+  background-color: white;
+}
+
+.header {
+  width: 1440px;
+  height: 100px;
+  background: transparent;
+  border: 1px solid #486284;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1a202c;
+  margin-left: 66px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background-color: white;
+  border-bottom: 1px solid #486284;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-left: 5%;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+  }
+  
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+  
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    text-align: center;
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: #486284;
+  opacity: 1;
+  margin: 0 1rem;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+  padding: 20px;
+}
+
+.menu-item {
+  font-size: 16px;
+  font-weight: 500;
+  color: #486284;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.menu-item.active {
+  font-weight: 600;
+  color: #1a202c;
+}
+
+.main {
+  margin-top: 210px;
+  margin-left: 13%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;
+  padding: 20px;
+  width: 95%;
+  align-items: center;
+  position: fixed;
+}
+
+.card {
+  width: 300px;
+  height: 300px;
+  border-radius: 25px;
+  background: #dee5ed;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 10px
+}
+
+.category {
+  font-size: 18px;
+  color: #b18531;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 44px;
+  color: rgba(76, 76, 76, 0.65);
+  font-weight: bold;
+}
+
+.toys .category {
+  color: #d4b100;
+}
+
+.food .category {
+  color: #b18531;
+}
+
+.exercise .category {
+  color: #25d02c;
+}
+
+.upload {
+  margin-left: 40px;
+  width: 559px;
+  height: 612px;
+  background: #dee5ed;
+}
+
+.upload .category {
+  font-size: 26px;
+  color: #444;
+}

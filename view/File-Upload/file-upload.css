@@ -1,0 +1,562 @@
+body, html {
+    margin: 0;
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    background-color: #fff;
+    padding: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: white;
+    border-bottom: 1px solid #486284;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+  
+.logo {
+    font-size: 1.3rem;
+    font-weight: 550;
+    color: #0d2d57;
+    margin-left: 6%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+  
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+
+.navigation li{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    text-align: center;
+    opacity: 0.9;
+    cursor: pointer;
+}
+    
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+    
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    text-align: center;
+    opacity: 0.9;
+    cursor: pointer;
+}
+  
+.login-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    opacity: 0.9;
+    cursor: pointer;
+}
+  
+.signup {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #486284;
+    opacity: 0.9;
+    text-decoration: underline;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+  
+.divider {
+    width: 1px;
+    height: 24px;
+    background-color: #486284;
+    opacity: 1;
+    margin: 0 1rem;
+}
+
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ffffff;
+    transition: border-bottom ease;
+    cursor: pointer;
+    font-family: 'Pretendard';
+    font-size: 20px;
+}
+
+.tab.active {
+    font-family: 'Pretendard';
+    border-bottom: 2px solid #000000;
+    font-weight: bold;
+}
+
+.tab:hover {
+    border-bottom: 2px solid #cccccc;
+}
+
+.tab:active {
+    border-bottom: 2px solid #000000;
+}
+
+.upload {
+    display: absolute;
+    align-items: center;
+    margin: 20px 5%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px;
+    margin-bottom: 10px;
+    padding: 90px 50px;
+    padding-bottom: 40px;
+}
+
+.upload-box {
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    text-align: center;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+}
+
+.uploaded-files {
+    margin: 10px 80px;
+    padding: 10px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.uploaded-files div {
+    margin: 5px 0;
+    padding: 5px;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.upload-box {
+    position: relative;
+}
+
+.file-list {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    overflow-y: auto;
+    display: none;
+}
+
+.file-list-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-info {
+    padding: 20px;
+}
+
+.upload-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.complete-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.complete-btn button {
+    padding: 8px 30px;
+    margin: 10px;
+    font-family: 'Pretendard';
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #fff;
+    border-width: 0.2px;
+    border-radius: 8px;
+    border-color: #a6a6a6;
+    transition: background-color 0.1s ease;
+}
+
+.complete-btn button:hover {
+    background-color: #cdcdcd;
+}
+
+.click-here, .upload-description {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+/*ocr로 텍스트 인식 및 변환 결과*/
+.ocr-result-box {
+    margin: 20px 5%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.ocr-result {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Pretendard';
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+#generate-button {
+    margin: 15px 5%;
+    padding: 6px 3%;
+    font-family: 'Pretendard';
+    border: 1px solid #a2a2a2;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+#generate-button:hover {
+    background-color: #cdcdcd;
+}
+
+#question-generation {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.question-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.raw-data, .questions, .answers {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.raw-data pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.questions div, .answers div {
+    margin-bottom: 20px;
+}
+
+strong {
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.question {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.question:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.question h3 {
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.question p {
+    margin: 10px 0;
+}
+
+.loading {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 20px;
+}
+
+.server-response {
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Pretendard';
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.loading-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.choices {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.choices li {
+    margin-bottom: 5px;
+}
+
+.single-question, .single-answer {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.single-question:last-child, .single-answer:last-child {
+    border-bottom: none;
+}
+
+/* 문제와 정답을 각각 왼쪽과 오른쪽에 배치하기 위한 Flexbox 스타일 */
+.question-answer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.question-content, .answer-content {
+    width: 100%;  /* 각 영역의 너비를 조정 */
+}
+
+.question-content h3, .answer-content h3 {
+    margin-bottom: 10px;
+}
+
+.answer-item h4 {
+    margin-top: 10px;
+    color: #555;
+}
+
+.answer-item p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.question-item, .answer-item {
+    margin-bottom: 20px;
+    page-break-inside: avoid;
+}
+
+.questions, .answers {
+    page-break-after: always;
+}
+
+.question-item p, .answer-item p {
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #486284;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-container button:hover {
+    background-color: #0056b3;
+}
+
+.header-images {
+    display: flex; /* 플렉스 박스 사용 */
+    justify-content: flex-end; /* 양쪽 끝으로 배치 */
+    align-items: center; /* 수직 정렬 */
+    margin-bottom: 20px; /* 문제집 목록과의 간격 추가 */
+    margin-right: 30px;
+}
+
+.penguin-image {
+    max-width: 150%; /* 이미지 최대 너비 설정 */
+    height: auto; /* 비율 유지 */
+}
+
+.problem-list {
+    display: grid; /* 그리드 레이아웃 사용 */
+    grid-template-columns: repeat(4, 1fr); /* 한 줄에 3개 표시 */
+    gap: -10px;
+}
+
+.problem-set {
+    border: 1px solid #ccc; /* 테두리 추가 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    margin: 5% 40px;
+    padding: 30px;
+    text-align: left; /* 텍스트 중앙 정렬 */
+    background-color: #D3DCE7; /* 배경색 추가 */
+    transition: transform 0.1s; /* 호버 효과 추가 */
+    display: flex; /* 플렉스 박스 사용 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    justify-content: flex-start; /* 위쪽에 붙도록 설정 */
+    transform: scale(1.0); /* 호버 시 확대 효과 */
+    margin-bottom: 10px; /* 문제집 박스 간의 거리 */
+}
+
+.problem-set:hover {
+    transform: scale(1.03); /* 호버 시 확대 효과 */
+}
+
+.id-and-favorite {
+    display: flex; /* 플렉스 박스 사용 */
+    justify-content: space-between; /* 날짜와 즐겨찾기 아이콘 간격 조정 */
+    align-items: center; /* 수직 정렬 */
+    margin-bottom: 10px; /* 아래쪽 여백 추가 */
+}
+
+.viewProblems, .viewAnswers {
+    background-color: #ffffff;
+    font-family: 'Pretendard';
+    font-weight: 700;
+    border: none;
+    border-width: 0.5px;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.toggleFavorite {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: gold; /* 별표 색상 */
+    font-size: 24px; /* 별표 크기 */
+    display: flex; /* 플렉스 박스 사용 */
+    justify-content: space-between;
+    align-items: center; /* 수직 정렬 */
+    margin-left: 5px; /* 문제집 이름과의 간격 */
+}
+
+.problem-set h3 {
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    margin: 0;
+}
+
+.problem-set h2 {
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center; /* 수직 정렬 */
+    margin: 0; /* 기본 마진 제거 */
+}
+
+.workbook-button {
+    display: flex; /* 버튼을 가로로 배치 */
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    margin-top: 20px; /* 버튼과 제목 사이의 간격 추가 */
+}
+
+.workbook-button button {
+    flex: 1; /* 버튼이 동일한 너비를 가지도록 설정 */
+    margin-right: 10px; /* 버튼 간격 추가 */
+    padding: 10px; /* 버튼 패딩 추가 */
+    background-color: #ffffff; /* 버튼 배경색 */
+    border: 1px solid #ccc; /* 버튼 테두리 */
+    border-radius: 4px; /* 버튼 모서리 둥글게 */
+    cursor: pointer; /* 커서 포인터로 변경 */
+    transition: background-color 0.2s; /* 호버 효과 추가 */
+}
+
+.star-icon {
+    width: 20px; /* 아이콘 너비 설정 */
+    height: auto; /* 비율 유지 */
+    vertical-align: middle; /* 텍스트와 수직 정렬 */
+    margin-left: 5px; /* 문제집 이름과의 간격 추가 */
+}

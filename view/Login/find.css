@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  height: 100vh;
+  font-family: 'Archivo Black', sans-serif;
+  overflow: hidden;
+}
+.header {
+  background-color: white;
+  width: 100%;
+  padding: 25px 0;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border: 1px solid rgb(75, 98, 140);
+}
+.header .menu {
+  text-align: right;
+  justify-content: right;
+  align-items: center;
+  padding: 0px 5px;
+  display: flex;
+}
+.menu li {
+  color: rgb(124, 141, 191);
+}
+
+.header ul {
+  list-style: none;
+  padding: 0px 30px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header ul li {
+  padding: 0 9px;
+}
+.header ul li a {
+  color: rgb(124, 141, 191);
+  font-size: 14px;
+
+  text-align: right;
+  padding-right: 5;
+}
+
+.logo {
+  font-size: 24px;
+  text-align: left;
+  padding: 5;
+  text-align: justify;
+  margin-right: 0px;
+}
+
+.header .home {
+  font-size: 14px;
+  color: black;
+  text-align: right;
+  text-decoration: none;
+  align-items: center;
+}
+.header ul li a.login {
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  background-color: rgb(75, 98, 140);
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 12px;
+}
+.container {
+  top: auto;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.main {
+  background-color: white;
+  /* padding: 50% 0px 50% 0px; */
+  width: 100%;
+  height: 100%;
+  line-height: 2;
+  top: 50%;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  font-size: 90px;
+  font-weight: 50;
+  color: rgb(73, 95, 131);
+  margin: 60.3px 0px 0px;
+  padding: 100px 0px 0px;
+}
+h3 {
+  margin: 5px;
+}
+.text p {
+  opacity: 0.4;
+  font-size: large;
+  line-height: 60%;
+}
+.text {
+  margin-bottom: 50px;
+}
+
+.find {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  height: fit-content;
+  font-size: 30px;
+  margin: 0 auto; /*수평 가운데 정렬*/
+}
+
+.find_item {
+  margin: 0px 30px;
+}
+
+.find a {
+  text-decoration: none;
+  opacity: 0.4;
+  color: black;
+}
+.certify_go .button {
+  color: #ffffff;
+  padding: 30px 170px;
+  height: 10px;
+  border: none;
+  border-radius: 3px;
+  font-size: 17px;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

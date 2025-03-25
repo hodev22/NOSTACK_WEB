@@ -1,0 +1,418 @@
+body, html {
+  margin: 0;
+  font-family: 'Pretendard Variable', Pretendard, -apple-system,
+    BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+  background-color: #fff;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* 가로 스크롤 방지 */
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 550;
+  color: #0d2d57;
+  margin-left: 6%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh; /* 뷰포트 높이에 맞춤 */
+  padding: 10px;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.8rem 0;
+  background-color: white;
+  border-bottom: 1px solid #486284;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-left: 5%;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #486284;
+  text-align: center;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.signup {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #486284;
+  text-decoration: underline;
+  margin-left: 1rem;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.divider {
+  width: 1px;
+  height: 24px;
+  background-color: #486284;
+  opacity: 1;
+  margin: 0 1rem;
+}
+
+
+.login-button {
+  padding: 0.5rem 1rem;
+  background-color: #486284;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.login-text {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #486284;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.main {
+  position: relative;
+  padding: 4rem 2rem; /*padding 줄임*/
+  max-width: 640px;
+  width: 100%;
+  flex-grow: 1;
+  overflow-y: auto; /* 내용이 넘치면 스크롤 */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* 간격 줄임 */
+  max-height: calc(100vh - 150px); /* 헤더와 푸터 높이에 맞춰 조정 */
+}
+
+.title {
+  font-size: 1.8rem; /* 폰트 크기 줄임 */
+  font-weight: bold;
+  color: #000;
+}
+
+.description {
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.63);
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem; /* 간격 줄임 */
+  margin-bottom: 5px; /* 간격 줄임 */
+}
+
+.input-field {
+  flex: 1 1 calc(50% - 0.25rem); /* 간격 줄임 */
+  position: relative;
+  min-width: 150px; /* 최소 너비 줄임 */
+  margin-bottom: 5px; /* 간격 줄임 */
+}
+
+.input-field2 {
+  /*인증번호 입력창*/
+  position: relative;
+  flex: 1 1 calc(40% - 0.5rem);
+  min-width: 200px;
+  margin-bottom: 10px;
+}
+
+#verification-section {
+  display: flex;
+  align-items: center;
+  /* gap: 5rem; 입력칸과 타이머의 간격 */
+}
+
+.input-label,
+.input-label-tel {
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  background-color: #fff;
+  padding: 0 0.25rem;
+  font-size: 0.875rem;
+  color: #1c1b1f;
+}
+
+.input,
+.input-name,
+.input-email,
+.input-tel,
+.input-pwd,
+.input-pwdcon {
+  width: 100%;
+  height: 3rem;
+  padding: 0.25rem 1rem;
+  border: 1px solid #79747e;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-field button {
+  position: absolute;
+  font-family: 'Pretendard';
+  top: 0.8rem;
+  right: 0.5rem;
+}
+
+.input-verification {
+  border: none;
+  border-bottom: 1px solid #000000;
+  outline: none;
+  padding: 5px;
+  width: 4rem;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.submit-button {
+  width: 100%;
+  height: 2rem;
+  background-color: #486284;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 450;
+  font-family: 'Pretendard';
+  color: #f3f3f3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.login-prompt {
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 3px;
+}
+
+.login-link {
+  color: #ef2828;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.divider-container {
+  height: fit-content;
+}
+
+.or-text {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  color: #313131;
+  opacity: 0.5;
+  text-align: center;
+  margin: 0.3rem 0;
+}
+
+.or-text::before,
+.or-text::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background: #313131;
+  margin: 0.5rem 1rem; /* 간격 줄임 */
+}
+
+.login-btn {
+  position: relative;
+  justify-content: space-between;
+  margin: 0 10px; /* 간격 조정 */
+  display: inline;
+  gap: 1rem; /* 간격 줄임 */
+  text-align: center;
+}
+
+#kakao-login-btn {
+  display: inline-block;
+  justify-content: space-between;
+  position: relative;
+}
+
+#naverIdLogin img {
+  display: inline-block;
+  justify-content: space-between;
+  position: relative;
+  width: 235px;
+  height: 55.32px;
+}
+
+.login-btn img {
+  max-width: 100%;
+  height: auto;
+  padding-right: 10px; /* 패딩 줄임 */
+  cursor: pointer;
+}
+
+.no-stack {
+  position: absolute;
+  right: 18%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  color: #486284;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+@media (max-width: 1440px) {
+  .main {
+    padding: 6rem 2%; /*padding 조정*/
+  }
+
+  .form {
+    padding-top: 2%;
+  }
+
+  .login-btn {
+    justify-content: center;
+    display: inline-block;
+  }
+
+  .no-stack {
+    display: block;
+  }
+}
+
+@media (min-width: 1280px) {
+  .main {
+    padding: 6rem 2%; /*padding 조정*/
+  }
+
+  .form {
+    padding-top: 2%;
+  }
+
+  .login-btn {
+    justify-content: center;
+    display: inline-block;
+  }
+
+  .no-stack {
+    display: block;
+  }
+}
+
+@media (max-width: 1080px) {
+  .main {
+    padding: 6rem 2%; /*padding 조정*/
+    overflow: auto;
+  }
+
+  .form {
+    padding-top: 2%;
+  }
+
+  .login-btn {
+    justify-content: center;
+    display: inline-block;
+  }
+
+  .no-stack {
+    display: none;
+  }
+}
+
+@media (max-width: 960px) {
+  .main {
+    padding: 5rem 2%;
+    max-width: 100%;
+    overflow: auto;
+  }
+
+  .form {
+    padding-top: 2%;
+  }
+
+  .login-btn {
+    justify-content: center;
+    display: inline-block;
+  }
+
+  .no-stack {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 8rem 2%;
+    max-width: 100%;
+    overflow: auto;
+  }
+
+  .form {
+    padding-top: 2%;
+  }
+
+  .login-btn {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .no-stack {
+    display: none;
+  }
+}

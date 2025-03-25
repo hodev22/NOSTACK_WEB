@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/view/Sign/Signup_completed.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js"charset="utf-8"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>회원가입 완료</title>
+</head>
+<body>
+    <div class="header">
+      <div class="logo">NOSTACK</div>
+      <nav class="navigation">
+        <div class="nav-links">
+          <div class="nav-link" onclick="location.href='../Main/main.html'">Home</div>
+          <div class="nav-link" onclick="location.href='#'">서비스 소개</div>
+          <div class="nav-link" id="createWB">문제집 생성</div>
+      </div>
+      <div class="divider"></div>
+      <div class="nav-link" onclick="logout()">로그아웃</div>
+  </nav>
+</div>
+    <div class="container">
+    
+        <div class="welcome">
+            <h1>NO STACK의 회원이 되신 것을 환영합니다</h1>
+            <h3>나만의 맞춤형 문제를 생성해 보세요!</h3>
+            </form>
+            <div class="workbook">
+                <button type="button" class="button" onclick="location.href='../File-Upload/file-upload.html'">문제집 생성 바로가기</button>
+            </div>
+        </div>
+    </div>
+  </body>
+    <script src="/config/apikey.js"></script>
+    <script text="javascript">
+
+        const BASE_URL = config.BASE_URL;  // Base URL 변수 설정
+        const naver_apikey = config.naver_apikey;
+
+      document.addEventListener('DOMContentLoaded', function() {
+        // URL에서 응답 데이터 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const responseData = urlParams.get('response');
+
+        if (responseData) {
+            try {
+                // JSON 문자열을 객체로 변환
+                const response = JSON.parse(decodeURIComponent(responseData));
+                console.log('카카오 로그인 응답:', response);
+
+                // userId가 있다면 쿠키에 저장
+                if (response.userId) {
+                    document.cookie = `userId=${response.userId}; path=/; max-age=3600; SameSite=Lax`;
+                    console.log('userId를 쿠키에 저장했습니다:', response.userId);
+                } else {
+                    console.log('userId가 응답에 없습니다.');
+                }
+            } catch (error) {
+                console.error('응답 데이터 파싱 오류:', error);
+            }
+        } else {
+            console.log('URL에 응답 데이터가 없습니다.');
+        }
+
+
+        // 쿠키를 가져오는 함수
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // 내비게이션 바를 업데이트하는 함수
+    function updateNavbar() {
+        console.log('updateNavbar 함수 호출됨');
+        const navbar = document.querySelector('.navigation');
+        if (!navbar) {
+            console.error('Navbar element not found');
+            return;
+        }
+        const userId = getCookie('userId');
+        console.log('userId from cookie:', userId);
+
+        if (userId) {
+            console.log('로그인 상태: 로그아웃 버튼 표시');
+            navbar.innerHTML = `
+                <div class="nav-links">
+                    <div class="nav-link" onclick="location.href='/main-page/main.html'">Home</div>
+                    <div class="nav-link" onclick="location.href='#'">서비스 소개</div>
+                    <div class="nav-link" onclick="location.href='#'">문제집 생성</div>
+                </div>
+                <div class="divider"></div>
+                <div class="nav-link" onclick="logout()">로그아웃</div>
+            `;
+        } else {
+            console.log('로그아웃 상태: 로그인, 회원가입 버튼 표시');
+            // 로그아웃 상태의 navbar HTML은 그대로 유지
+            }
+        }
+
+    // 페이지 로드 시 내비게이션 바 업데이트
+    document.addEventListener('DOMContentLoaded', updateNavbar);
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const naverLogin = new naver.LoginWithNaverId({
+          clientId: naver_apikey,
+          callbackUrl: "http://localhost:8000/Sign/Signup_completed.html",
+          callbackHandle: true // 콜백 자동 처리 활성화
+      });
+
+      naverLogin.init();
+
+      // 네이버 로그인 상태 확인
+      naverLogin.getLoginStatus(function (status) {
+          if (status) {
+              //네이버 로그인 성공 시 사용자 정보 가져오기
+              const email = naverLogin.user.getEmail();
+              const name = naverLogin.user.getName();
+
+              console.log("네이버 아이디로 회원가입 성공:");
+              console.log("이메일:", email);
+              console.log("이름:", name);
+
+              // 서버 API 연결
+              axios
+                  .post(`${BASE_URL}/api/auth/naver-login`, {
+                      email: email,
+                      name: name,
+                  }, {
+                      headers: {
+                          Authorization: `${naverLogin.accessToken.accessToken}`
+                      },
+                  })
+                  .then((response) => {
+                      console.log("서버 응답 데이터:", response.data);
+
+                      const userId = response.data.userId;
+
+                      if (userId) {
+                          document.cookie = `userId=${userId}; path=/; max-age=3600`;
+                          console.log("userId가 쿠키에 저장되었습니다:", userId);
+                      } else {
+                          console.error("서버 응답에 userId가 없습니다.");
+                      }
+                      alert("회원가입 성공!");
+                  })
+                  .catch((error) => {
+                      console.error("서버 요청 중 에러 발생:", error.response || error);
+                      alert("회원가입 처리 중 에러가 발생했습니다.");
+                  });
+          } else {
+              console.log("네이버 로그인을 사용하지 않았습니다.");
+          }
+      });
+  });
+    </script>
+<script src="/controller/login/login_api.js"></script>
+<script src="/controller/file-upload.js"></script>
+</html>
